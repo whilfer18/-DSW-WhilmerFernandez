@@ -1,0 +1,291 @@
+body {
+    background-color: white;
+    color: black;
+}
+
+nav,
+header,
+.contenedor,
+footer {
+    max-width: 92%;
+    margin: auto;
+}
+
+nav {
+    background-color: midnightblue;
+    text-align: center;
+}
+
+header {
+    background-color: white;
+}
+
+.contenedor {
+    background-color: #f1f1f1;
+}
+
+.central {
+    background-color: whitesmoke;
+    display: inline-block;
+    max-width: 70%;
+}
+
+footer {
+    background-color: orange;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    color: white;
+    text-align: center;
+}
+
+aside {
+    display: inline-block;
+    max-width: 30%;
+    float: right;
+    font-style: italic;
+}
+
+.menu li {
+    display: inline-block;
+}
+
+li a,
+boton {
+    display: inline-block;
+    color: white;
+    text-align: center;
+    text-decoration: none;
+    padding: 0.9em 1em;
+}
+
+.listaDesplegable {
+    display: none;
+    background-color: ghostwhite;
+    position: absolute;
+}
+
+.listaDesplegable a {
+    color: black;
+    display: block;
+    text-align: left;
+}
+
+.boton:hover .listaDesplegable {
+    display: block;
+}
+
+button {
+    padding: 0;
+}
+
+li a:hover {
+    background-color: #d4a402;
+}
+
+.logo {
+    width: 105%;
+    height: 70%;
+}
+
+.titulo1 {
+    color: orange;
+    text-align: justify;
+}
+
+#tituloLogo {
+    text-align: left;
+    width: 99%;
+}
+
+#titulo {
+    width: 79%;
+    /* Este será el ancho que tendrá la columna */
+    /* Aquí pon el color del fondo que quieras para este lateral */
+    float: right;
+    /* Aquí se determina de lado de esta "columna" */
+}
+
+#logoUnad {
+    width: 20%;
+    float: left;
+    text-align: center;
+    /* ponemos un donde para que se vea bonito */
+}
+
+
+/* Para limpiar los floats */
+
+.clearfix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
+
+/*cards*/
+
+img {
+    height: auto;
+    max-width: 120%;
+    width: 100%;
+    vertical-align: middle;
+}
+
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    width: 90%;
+}
+
+.cards_item {
+    display: flex;
+    padding: 1rem;
+}
+
+@media (min-width: 40rem) {
+    .cards_item {
+        width: 50%;
+    }
+}
+
+@media (min-width: 56rem) {
+    .cards_item {
+        width: 90%;
+    }
+}
+
+.card {
+    background-color: white;
+    border-radius: 0.25rem;
+    box-shadow: 0 20px 40px -14px rgba(0, 0, 0, 0.25);
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.card_content {
+    padding: 1rem;
+    background: linear-gradient(to bottom left, white 70%, #ffc39e 100%);
+}
+
+.card_title {
+    color: midnightblue;
+    font-size: 1.1rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+    text-transform: capitalize;
+    margin: 0px;
+}
+
+.card_text {
+    color: midnightblue;
+    font-size: 0.875rem;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+    font-weight: 400;
+}
+
+.made_by {
+    font-weight: 400;
+    font-size: 13px;
+    margin-top: 35px;
+    text-align: center;
+}
+
+
+/*table*/
+
+table {
+    width: 750px;
+    border-collapse: collapse;
+    margin: 50px auto;
+}
+
+
+/* Zebra striping */
+
+tr:nth-of-type(odd) {
+    background: #eee;
+}
+
+th {
+    background: midnightblue;
+    color: white;
+    font-weight: bold;
+}
+
+td,
+th {
+    padding: 10px;
+    border: 1px solid #ccc;
+    text-align: left;
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+    font-size: 14px;
+    line-height: 1.42857143;
+    line-height: 1.5;
+    margin-bottom: 1.25rem;
+    font-weight: 400;
+}
+
+.viñeta {
+    float: left;
+    width: 25%;
+    margin-right: 5%;
+}
+
+
+/* 
+Max width before this PARTICULAR table gets nasty
+This query will take effect for any screen smaller than 760px
+and also iPads specifically.
+*/
+
+@media only screen and (max-width: 760px),
+(min-device-width: 768px) and (max-device-width: 1024px) {
+    table {
+        width: 100%;
+    }
+    /* Force table to not be like tables anymore */
+    table,
+    thead,
+    tbody,
+    th,
+    td,
+    tr {
+        display: block;
+    }
+    /* Hide table headers (but not display: none;, for accessibility) */
+    thead tr {
+        position: absolute;
+        top: -9999px;
+        left: -9999px;
+    }
+    tr {
+        border: 1px solid #ccc;
+    }
+    td {
+        /* Behave  like a "row" */
+        border: none;
+        border-bottom: 1px solid #eee;
+        position: relative;
+        padding-left: 50%;
+    }
+    td:before {
+        /* Now like a table header */
+        position: absolute;
+        /* Top/left values mimic padding */
+        top: 6px;
+        left: 6px;
+        width: 45%;
+        padding-right: 10px;
+        white-space: nowrap;
+        /* Label the data */
+        content: attr(data-column);
+        color: #000;
+        font-weight: bold;
+    }
+}
